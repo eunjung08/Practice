@@ -47,10 +47,12 @@ public class Enemy : MonoBehaviour
         if (Vector3.Distance(this.transform.position, player.position) < navMeshAgent.stoppingDistance + 0.1f)
         {
             StartCoroutine("Attack");
+            isAttackCheck = true;
         }
         else
         {
             navMeshAgent.isStopped = false;
+            isAttackCheck = false;
         }
     }
 

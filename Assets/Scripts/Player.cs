@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            isAttackCheck = true;
             animator.SetTrigger("isAttack");
         }
     }
