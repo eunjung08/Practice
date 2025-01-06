@@ -8,7 +8,9 @@ public class Enemy : MonoBehaviour
     NavMeshAgent navMeshAgent;
     Transform player;
     Animator animator;
-    bool isWalk = false;
+    public bool isAttackCheck = false;
+    int hp = 2;
+    bool isStop = false;
 
     void Start()
     {
@@ -49,6 +51,21 @@ public class Enemy : MonoBehaviour
         else
         {
             navMeshAgent.isStopped = false;
+        }
+    }
+
+    public void SetHp(int damage)
+    {
+        if(!isStop)
+        {
+            hp -= damage;
+            if(hp < 0)
+            {
+                hp = 0;
+                Debug.Log("die");
+                animator.SetTrigger("Death");
+                isStop = true;
+            }
         }
     }
 }
