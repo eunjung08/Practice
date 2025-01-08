@@ -20,9 +20,12 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        Walk();
-        Attack();
-        Rotation();
+        if (!isStop)
+        {
+            Walk();
+            Attack();
+            Rotation();
+        }
     }
 
     void Walk()
@@ -64,9 +67,15 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            isAttackCheck = true;
             animator.SetTrigger("isAttack");
+            isAttackCheck = true;
+            Invoke("StopAttackCheck", 0.5f);
         }
+    }
+
+    void StopAttackCheck()
+    {
+        isAttackCheck = false;
     }
 
     void Rotation()

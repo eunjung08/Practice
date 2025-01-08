@@ -22,37 +22,44 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if (!navMeshAgent.isStopped)
+        if (!isStop)
         {
-            if (Vector3.Distance(this.transform.position, player.position) < navMeshAgent.stoppingDistance + 0.1f)
+            if (!navMeshAgent.isStopped)
             {
-                navMeshAgent.isStopped = true;
+                if (Vector3.Distance(this.transform.position, player.position) < navMeshAgent.stoppingDistance + 5)
+                {
+                    navMeshAgent.isStopped = true;
+                    StartCoroutine("Attack");
+                }
+                else
+                {
+                    navMeshAgent.isStopped = false;
+                    animator.SetBool("isWalk", true);
+                    navMeshAgent.destination = player.position;
+                }
+            }
+            this.transform.LookAt(player.position);
+        }
+    }
+
+    IEnumerator Attack()
+    {
+        if (!isStop)
+        {
+            yield return new WaitForSeconds(0.5f);
+            animator.SetTrigger("isAttack");
+            isAttackCheck = true;
+
+            yield return new WaitForSeconds(0.5f);
+            isAttackCheck = false;
+            if (Vector3.Distance(this.transform.position, player.position) < navMeshAgent.stoppingDistance + 5)
+            {
                 StartCoroutine("Attack");
             }
             else
             {
                 navMeshAgent.isStopped = false;
-                animator.SetBool("isWalk", true);
-                navMeshAgent.destination = player.position;
             }
-        }
-        this.transform.LookAt(player.position);
-    }
-
-    IEnumerator Attack()
-    {
-        yield return new WaitForSeconds(0.5f);
-        animator.SetTrigger("isAttack");
-        yield return new WaitForSeconds(0.5f);
-        if (Vector3.Distance(this.transform.position, player.position) < navMeshAgent.stoppingDistance + 0.1f)
-        {
-            StartCoroutine("Attack");
-            isAttackCheck = true;
-        }
-        else
-        {
-            navMeshAgent.isStopped = false;
-            isAttackCheck = false;
         }
     }
 
