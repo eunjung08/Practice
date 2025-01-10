@@ -47,4 +47,21 @@ public class Menu : MonoBehaviour
                 break;
         }
     }
+
+    public void BtnClose()
+    {
+        menuStatus = MenuStatus.None;
+        Manager.Instance.ContinueGame();
+    }
+
+    public void BtnRestart()
+    {
+        menuStatus = MenuStatus.None;
+        Manager.Instance.RestartGame();
+    }
+
+    public void BtnHome()
+    {
+        Manager.Instance.MainMenu();
+    }
 }
