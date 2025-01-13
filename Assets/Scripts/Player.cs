@@ -18,6 +18,13 @@ public class Player : MonoBehaviour
     public float BulletTime = 0f;
     bool isBullet = false;
 
+    public int maxHp = 5;
+    public float itemSpeed = 15.0f;
+    bool isItemSpeed = false;
+    public float baseSpeed = 10.0f;
+    public float itemSeedTimeSpan;
+    public float itemSpeedTimer = 5f;
+
     void Start()
     {
         characterController = this.GetComponent<CharacterController>();
@@ -132,6 +139,37 @@ public class Player : MonoBehaviour
                 Debug.Log("GameOver");
                 animator.SetTrigger("Death");
                 isStop = true;
+            }
+        }
+    }
+
+    public void ItemPotion()
+    {
+        hp = maxHp;
+    }
+
+    public void ItemSpeed()
+    {
+        speed = itemSpeed;
+        //Invoke("SetBaseSpeed", 5.0f);
+        isItemSpeed = true;
+        itemSeedTimeSpan = 0;
+    }
+
+    void SetBaseSpeed()
+    {
+        speed = baseSpeed;
+    }
+
+    void ItemSpeedTimer()
+    {
+        if (isItemSpeed)
+        {
+            itemSeedTimeSpan += Time.deltaTime;
+            if(itemSeedTimeSpan >= itemSpeedTimer)
+            {
+                isItemSpeed = false;
+                itemSeedTimeSpan = 0;
             }
         }
     }
