@@ -5,11 +5,11 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     CharacterController characterController;
-    public float speed = 2.0f;
+    public float speed = 10f;
     Animator animator;
     bool isWalk = false;
     public bool isAttackCheck = false;
-    int hp = 2;
+    public int hp = 5;
     bool isStop = false;
     public GameObject PrefabBullet;
     public Transform BulletPoint;
@@ -19,9 +19,9 @@ public class Player : MonoBehaviour
     bool isBullet = false;
 
     public int maxHp = 5;
-    public float itemSpeed = 15.0f;
+    public float itemSpeed = 15f;
     bool isItemSpeed = false;
-    public float baseSpeed = 10.0f;
+    public float baseSpeed = 10f;
     public float itemSeedTimeSpan;
     public float itemSpeedTimer = 5f;
 
@@ -38,6 +38,10 @@ public class Player : MonoBehaviour
             Walk();
             Attack();
             Rotation();
+            if (!isItemSpeed)
+            {
+                SetBaseSpeed();
+            }
         }
     }
 
@@ -151,7 +155,7 @@ public class Player : MonoBehaviour
     public void ItemSpeed()
     {
         speed = itemSpeed;
-        //Invoke("SetBaseSpeed", 5.0f);
+        Invoke("SetBaseSpeed", 5.0f);
         isItemSpeed = true;
         itemSeedTimeSpan = 0;
     }

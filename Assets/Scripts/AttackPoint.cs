@@ -7,6 +7,11 @@ public class AttackPoint : MonoBehaviour
     public Enemy enemy;
     public Player player;
     public int damage;
+
+    void Start()
+    {
+        player = GameObject.Find("Player").GetComponent<Player>();
+    }
     public enum Char
     {
         Player,

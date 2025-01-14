@@ -5,7 +5,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     //public string pollItemName = "Bullet";
-    public float speed = 10.0f;
+    public float speed = 15.0f;
     public float endTime = 2.0f;
     public float lifeTime = 0f;
     public int damage = 1;

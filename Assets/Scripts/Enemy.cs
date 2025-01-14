@@ -35,7 +35,7 @@ public class Enemy : MonoBehaviour
             navMeshAgent.isStopped = true;
             return;
         }
-        if (Vector3.Distance(this.transform.position, player.position) < navMeshAgent.stoppingDistance + 3)
+        if (Vector3.Distance(this.transform.position, player.position) < navMeshAgent.stoppingDistance + 4)
         {
                 navMeshAgent.isStopped = true;
                 StartCoroutine("Attack");
@@ -81,8 +81,7 @@ public class Enemy : MonoBehaviour
                 isAttackCheck = false;
                 isStop = true;
                 navMeshAgent.isStopped = true;
-                Destroy(this.gameObject);
-                spawnItem();
+                Invoke("Die", 1.5f);
                 //Invoke("DelayDestroy", 1.5f);
             }
             else
@@ -95,6 +94,12 @@ public class Enemy : MonoBehaviour
                 StartCoroutine("HitColor");
             }
         }
+    }
+
+    void Die()
+    {
+        Destroy(this.gameObject);
+        spawnItem();
     }
     void spawnItem()
     {

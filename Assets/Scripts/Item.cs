@@ -12,7 +12,6 @@ public enum ItemInfo
 public class Item : MonoBehaviour
 {
     ItemInfo itemInfo;
-    // Start is called before the first frame update
     void Start()
     {
         SetItem();
@@ -37,12 +36,14 @@ public class Item : MonoBehaviour
             case ItemInfo.Potion:
                 {
                     player.ItemPotion();
+                    Debug.Log("potion");
                     Destroy(this.gameObject);
                 }
                 break;
             case ItemInfo.Speed:
                 {
                     player.ItemSpeed();
+                    Debug.Log("speed");
                     Destroy(this.gameObject);
                 }
                 break;
