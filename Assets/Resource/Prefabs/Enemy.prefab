@@ -165,7 +165,7 @@ MonoBehaviour:
   isAttackCheck: 0
   navDistance: 15
   spawnItemPossible: 20
-  prefabItem: {fileID: 977489338112125801, guid: 257bb1cda20d58f418170f9e8247b336, type: 3}
+  prefabItem: {fileID: 2389269087867156765, guid: 19a21bd307ed3e2488c25019a42e9421, type: 3}
 --- !u!54 &2001353983548310264
 Rigidbody:
   m_ObjectHideFlags: 0
