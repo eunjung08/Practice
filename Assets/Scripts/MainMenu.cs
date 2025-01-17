@@ -21,7 +21,7 @@ public class MainMenu : MonoBehaviour
     public int isSouond = 0;
 
     public float musicVolume = 1;
-    public float souondVolume = 1;
+    public float soundVolume = 1;
 
     void Start()
     {
@@ -30,6 +30,18 @@ public class MainMenu : MonoBehaviour
 
         SliderMusic.onValueChanged.AddListener(delegate { MusicValueChange(); });
         SliderSound.onValueChanged.AddListener(delegate { SoundValueChange(); });
+
+        if (PlayerPrefs.HasKey("MusicVolume"))
+        {
+            musicVolume = PlayerPrefs.GetFloat("MusicVolume", SliderMusic.value);
+        }
+        SliderMusic.value = musicVolume;
+
+        if (PlayerPrefs.HasKey("SoundVolume"))
+        {
+            soundVolume = PlayerPrefs.GetFloat("SoundVolume", SliderSound.value);
+        }
+        SliderSound.value = soundVolume;
     }
     public void BtnStory()
     {
@@ -48,7 +60,6 @@ public class MainMenu : MonoBehaviour
         switch (num)
         {
             case 0:
-                Debug.Log("ad");
                 Story.GetComponent<Animator>().SetTrigger("Close");
                 Invoke("OpenMenuBack", 1.5f);
                 break;
@@ -88,10 +99,12 @@ public class MainMenu : MonoBehaviour
 
     void MusicValueChange()
     {
-        Debug.Log(SliderMusic.value);
+        //Debug.Log(SliderMusic.value);
+        PlayerPrefs.SetFloat("MusicVolume", SliderMusic.value);
     }
     void SoundValueChange()
     {
-        Debug.Log(SliderSound.value);
+        //Debug.Log(SliderSound.value);
+        PlayerPrefs.SetFloat("SoundVolume", SliderSound.value);
     }
 }

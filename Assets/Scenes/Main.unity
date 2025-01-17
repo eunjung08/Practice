@@ -906,6 +906,51 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &206846374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 206846376}
+  - component: {fileID: 206846375}
+  m_Layer: 0
+  m_Name: CSVManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &206846375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206846374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 632e3eb83b96cc847a49db9083c2e48c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  csvFile: {fileID: 4900000, guid: 018bb8d35b6919343a2dd28bf5d6c34d, type: 3}
+--- !u!4 &206846376
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 206846374}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 492.71725, y: 175.44511, z: 1.7374032}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &218513297
 GameObject:
   m_ObjectHideFlags: 0
@@ -2874,7 +2919,7 @@ MonoBehaviour:
   isMusic: 0
   isSouond: 0
   musicVolume: 1
-  souondVolume: 1
+  soundVolume: 1
 --- !u!4 &1104337845
 Transform:
   m_ObjectHideFlags: 0
@@ -3474,7 +3519,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -237798.95, y: 0}
+  m_AnchoredPosition: {x: -98786.11, y: 0}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &1564096063
@@ -4343,7 +4388,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -275}
+  m_AnchoredPosition: {x: 0, y: -277}
   m_SizeDelta: {x: 700, y: 190}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2068169293
@@ -4373,7 +4418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.21698111, g: 0.21698111, b: 0.21698111, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -4394,7 +4439,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\uACBD\uCC30\uCCAD \uCCA0\uCC3D\uC0B4\uC740 \uC678\uCCA0\uCC3D\uC0B4\uC774\uB0D0
-    \uCCA0\uCC3D\uC0B4\uC774\uB0D0\r\n\uACBD\uCC30\uCCAD \uCCA0\uCC3D\uC0B4\uC774
+    \uC30D\uCCA0\uCC3D\uC0B4\uC774\uB0D0\r\n\uACBD\uCC30\uCCAD \uCCA0\uCC3D\uC0B4\uC774
     \uC1E0\uCCA0\uCC3D\uC0B4\uC774\uB0D0 \uCCA0\uCCA0\uCC3D\uC0B4\uC774\uB0D0\r\n\uAC80\uCC30\uCCAD
     \uC1E0\uCCA0\uCC3D\uC0B4\uC740 \uC0C8\uC1E0\uCCA0\uCC3D\uC0B4\uC774\uB0D0 \uD5CC\uC1E0\uCCA0\uCC3D\uC0B4\uC774\uB0D0\r\n\uACBD\uCC30\uCCAD
     \uC1E0\uCC3D\uC0B4 \uC678\uCCA0\uCC3D\uC0B4\r\n\uAC80\uCC30\uCCAD \uC1E0\uCC3D\uC0B4
@@ -4549,3 +4594,4 @@ SceneRoots:
   - {fileID: 1104337845}
   - {fileID: 979775896}
   - {fileID: 43377989}
+  - {fileID: 206846376}
