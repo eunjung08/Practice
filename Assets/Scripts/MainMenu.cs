@@ -47,12 +47,13 @@ public class MainMenu : MonoBehaviour
     {
         switch (num)
         {
-            case 0: //MENUAL
+            case 0:
+                Debug.Log("ad");
                 Story.GetComponent<Animator>().SetTrigger("Close");
                 Invoke("OpenMenuBack", 1.5f);
                 break;
-            case 1: //STORY
-                Story.GetComponent<Animator>().SetTrigger("Close");
+            case 1:
+                Setting.GetComponent<Animator>().SetTrigger("Close");
                 Invoke("OpenMenuBack", 1.5f);
                 break;
 
