@@ -32,6 +32,10 @@ public class Manager : Singleton<Manager>
                 ContinueGame();
             }
         }
+        if (Input.GetKeyDown(KeyCode.I))
+        {
+            SceneManager.LoadScene(2);
+        }
     }
 
     public void PauseGame()

@@ -12,6 +12,7 @@ public enum ItemInfo
 public class Item : MonoBehaviour
 {
     ItemInfo itemInfo;
+    public CreateInventory createInventory;
     void Start()
     {
         SetItem();
