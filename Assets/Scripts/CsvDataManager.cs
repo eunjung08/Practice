@@ -26,6 +26,7 @@ public class CsvDataManager : MonoBehaviour
 
     private void Start()
     {
+        #region 데이터 넣고 파일 만들기
         //CsvData test = new CsvData();
         //test.No = 1;
         //test.User = "은정";
@@ -44,14 +45,16 @@ public class CsvDataManager : MonoBehaviour
         //dataDictionary.Add("3", test2);
 
         //CreateCSV();
+        #endregion
 
+        #region 데이터 확인
         CsvToDicionary();
         Debug.Log(GetObjData("1", GameScore.No) + GetObjData("1", GameScore.User) + GetObjData("1", GameScore.Score));
         Debug.Log(GetObjData("2", GameScore.No) + GetObjData("2", GameScore.User) + GetObjData("2", GameScore.Score));
         Debug.Log(GetObjData("3", GameScore.No) + GetObjData("3", GameScore.User) + GetObjData("3", GameScore.Score));
-
+        #endregion
     }
-    void CsvToDicionary()
+    void CsvToDicionary()  //CSV를 Dicionary로 바꿈
     {
         string[] records = csvFile.text.Split(lineSeperator);
 
@@ -112,7 +115,7 @@ public class CsvDataManager : MonoBehaviour
 
         return data;
     }
-    public void CreateCSV()
+    public void CreateCSV() //CSV파일 만들기
     {
         //Debug.Log(Application.dataPath + @"\my.csv")
         //Debug.Log(Application.dataPath + "\\my.csv") 

@@ -12,7 +12,6 @@ public enum ItemInfo
 public class Item : MonoBehaviour
 {
     ItemInfo itemInfo;
-    public CreateInventory createInventory;
     void Start()
     {
         SetItem();
@@ -27,6 +26,12 @@ public class Item : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             AddBuff(other.GetComponent<Player>());
+            CreateInventory inventory = FindObjectOfType<CreateInventory>();
+            if(inventory != null)
+            {
+                Debug.Log("d");
+                inventory.getItem();
+            }
         }
     }
 
@@ -36,6 +41,7 @@ public class Item : MonoBehaviour
         {
             case ItemInfo.Potion:
                 {
+
                     player.ItemPotion();
                     Debug.Log("potion");
                     Destroy(this.gameObject);

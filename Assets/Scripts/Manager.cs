@@ -17,6 +17,7 @@ public class Manager : Singleton<Manager>
         Clear,
         GameOver,
         Continue,
+        Inventory,
     }
 
     void Update()
@@ -34,7 +35,13 @@ public class Manager : Singleton<Manager>
         }
         if (Input.GetKeyDown(KeyCode.I))
         {
+            Time.timeScale = 0;
             SceneManager.LoadScene(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Backspace))
+        {
+            Time.timeScale = 1;
+            SceneManager.LoadScene(1);
         }
     }
 
