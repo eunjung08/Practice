@@ -35,13 +35,20 @@ public class Manager : Singleton<Manager>
         }
         if (Input.GetKeyDown(KeyCode.I))
         {
-            Time.timeScale = 0;
-            SceneManager.LoadScene(2);
+            CreateInventory inventory = FindObjectOfType<CreateInventory>();
+            if (inventory != null)
+            {
+                Debug.Log("d");
+                Time.timeScale = 0;
+                inventory.o_inventory();
+            }
         }
         if (Input.GetKeyDown(KeyCode.Backspace))
         {
+            CreateInventory inventory = FindObjectOfType<CreateInventory>();
+            Debug.Log("d");
             Time.timeScale = 1;
-            SceneManager.LoadScene(1);
+            inventory.c_inventory();
         }
     }
 

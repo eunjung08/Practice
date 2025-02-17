@@ -214,50 +214,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1434634565
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1434634567}
-  - component: {fileID: 1434634566}
-  m_Layer: 0
-  m_Name: InventoryManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1434634566
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1434634565}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6956d3ec9e0ce6b4992fbf34af023a7f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1434634567
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1434634565}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 28.185822, y: -11.419235, z: -67.01404}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1495494161
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,7 +294,6 @@ GameObject:
   - component: {fileID: 1789360419}
   - component: {fileID: 1789360418}
   - component: {fileID: 1789360417}
-  - component: {fileID: 1789360421}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -428,28 +383,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1789360421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1789360416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70d09c4e0fa92da47aba044938ac38f1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotCntWidth: 4
-  slotCntHeight: 4
-  slotWidthSize: 64
-  slotHeightSize: 64
-  prefabSlot: {fileID: 5890296196181499188, guid: 721f261dab4f03a4ebea2860e0833fc0, type: 3}
-  parentObj: {fileID: 1789360420}
-  backSprite: {fileID: 0}
-  SlotTopBarSize: 20
-  slots: []
-  prefabItem: {fileID: 3839567855369541488, guid: fefd6579cb7696045a79dbfbadee4d21, type: 3}
 --- !u!1 &2129245622
 GameObject:
   m_ObjectHideFlags: 0
@@ -552,4 +485,3 @@ SceneRoots:
   - {fileID: 2129245624}
   - {fileID: 1789360420}
   - {fileID: 1495494164}
-  - {fileID: 1434634567}

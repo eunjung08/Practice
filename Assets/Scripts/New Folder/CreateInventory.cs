@@ -23,12 +23,24 @@ public class CreateInventory : MonoBehaviour
     void Start()
     {
         SetInventory();
-
         //List<Item> item = new List<Item>();
         //Item i = new Item();
         //item.Add(i);
 
         //SetItem(item);
+    }
+
+    void Update()
+    {
+    }
+
+    public void o_inventory()
+    {
+        inventory.SetActive(true);
+    }
+    public void c_inventory()
+    {
+        inventory.SetActive(false);
     }
 
     public void getItem()
@@ -39,7 +51,7 @@ public class CreateInventory : MonoBehaviour
 
         SetItem(item);
     }
-    void SetInventory()
+    public void SetInventory()
     {
         inventory = new GameObject();
         Image image = inventory.AddComponent<Image>();
@@ -83,6 +95,7 @@ public class CreateInventory : MonoBehaviour
                 slots.Add(slot);
             }
         }
+        inventory.SetActive(false);
     }
 
     public void SetItem(List<Item> item)
